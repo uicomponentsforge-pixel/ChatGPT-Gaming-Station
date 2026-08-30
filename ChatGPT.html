@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ChatGPT Gaming Station</title>
+
+    <link rel="stylesheet" href="ChatGPT.css">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="brand">
+        🎮
+        <div>
+            <h1>CHATGPT GAMING STATION</h1>
+            <p>YOUR ULTIMATE GAME HUB</p>
+        </div>
+    </div>
+
+    <div class="top-stats">
+
+        <div>
+            ⭐ <span id="headerXP">0</span> XP
+        </div>
+
+        <div>
+            🪙 <span id="headerCoins">100</span>
+        </div>
+
+        <div>
+            LVL <span id="headerLevel">1</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <button onclick="showPage('home')">
+        🏠 Home
+    </button>
+
+    <button onclick="showPage('profile')">
+        👤 Profile
+    </button>
+
+    <button onclick="showPage('achievements')">
+        🏆 Achievements
+    </button>
+
+    <button onclick="showPage('leaderboard')">
+        🥇 Leaderboard
+    </button>
+
+    <button onclick="showPage('shop')">
+        🛒 Shop
+    </button>
+
+    <button onclick="showPage('howto')">
+        📖 How to Play
+    </button>
+
+</nav>
+
+
+<!-- ================================================= -->
+<!-- HOME -->
+<!-- ================================================= -->
+
+<section id="home" class="page active">
+
+    <div class="hero">
+
+        <div class="hero-icon">
+            🎮
+        </div>
+
+        <h2>
+            WELCOME TO THE GAMING STATION
+        </h2>
+
+        <p>
+            Choose a game and start your adventure!
+        </p>
+
+    </div>
+
+
+    <h2 class="section-title">
+        🎮 GAME STATION
+    </h2>
+
+
+    <div class="games">
+
+        <div
+            class="game-card"
+            onclick="startGame('battle')">
+
+            <div class="game-icon">
+                ⚔️
+            </div>
+
+            <h3>
+                Battle Arena
+            </h3>
+
+            <p>
+                Fight enemies and become the champion.
+            </p>
+
+            <button>
+                PLAY
+            </button>
+
+        </div>
+
+
+        <div
+            class="game-card"
+            onclick="startGame('puzzle')">
+
+            <div class="game-icon">
+                🧩
+            </div>
+
+            <h3>
+                Puzzle Zone
+            </h3>
+
+            <p>
+                Solve puzzles and test your brain.
+            </p>
+
+            <button>
+                PLAY
+            </button>
+
+        </div>
+
+
+        <div
+            class="game-card"
+            onclick="startGame('space')">
+
+            <div class="game-icon">
+                🚀
+            </div>
+
+            <h3>
+                Space Explorer
+            </h3>
+
+            <p>
+                Explore planets and discover the galaxy.
+            </p>
+
+            <button>
+                PLAY
+            </button>
+
+        </div>
+
+
+        <div
+            class="game-card"
+            onclick="startGame('racing')">
+
+            <div class="game-icon">
+                🏎️
+            </div>
+
+            <h3>
+                Racing Station
+            </h3>
+
+            <p>
+                Race against opponents and win.
+            </p>
+
+            <button>
+                PLAY
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PROFILE -->
+<!-- ================================================= -->
+
+<section id="profile" class="page">
+
+    <div class="profile-card">
+
+        <div class="avatar">
+            🧑‍🚀
+        </div>
+
+        <h2>
+            PLAYER ONE
+        </h2>
+
+        <p>
+            Gaming Station Member
+        </p>
+
+        <div class="level">
+            LEVEL
+            <strong id="profileLevel">
+                1
+            </strong>
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-grid">
+
+        <div class="info-card">
+            ⭐
+            <h3 id="profileXP">
+                0
+            </h3>
+            <p>XP</p>
+        </div>
+
+        <div class="info-card">
+            🪙
+            <h3 id="profileCoins">
+                100
+            </h3>
+            <p>Coins</p>
+        </div>
+
+        <div class="info-card">
+            🏆
+            <h3 id="profileWins">
+                0
+            </h3>
+            <p>Wins</p>
+        </div>
+
+        <div class="info-card">
+            🎮
+            <h3 id="profileGames">
+                0
+            </h3>
+            <p>Games Played</p>
+        </div>
+
+    </div>
+
+
+    <div class="xp-panel">
+
+        <h2>
+            ⭐ EXPERIENCE
+        </h2>
+
+        <p>
+            Level <span id="xpLevel">1</span>
+        </p>
+
+        <div class="xp-track">
+
+            <div
+                id="profileXPBar"
+                class="xp-fill">
+            </div>
+
+        </div>
+
+        <p>
+            <span id="currentXP">0</span>
+            /
+            <span id="neededXP">100</span>
+            XP
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- ACHIEVEMENTS -->
+<!-- ================================================= -->
+
+<section id="achievements" class="page">
+
+    <h2 class="page-title">
+        🏆 ACHIEVEMENTS
+    </h2>
+
+    <div class="achievement-list">
+
+        <div
+            id="achievement-first"
+            class="achievement locked">
+
+            <span>🎯</span>
+
+            <div>
+                <h3>
+                    First Victory
+                </h3>
+
+                <p>
+                    Win your first game.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div
+            id="achievement-ten"
+            class="achievement locked">
+
+            <span>🔥</span>
+
+            <div>
+                <h3>
+                    Getting Serious
+                </h3>
+
+                <p>
+                    Play 10 games.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div
+            id="achievement-level5"
+            class="achievement locked">
+
+            <span>⭐</span>
+
+            <div>
+                <h3>
+                    Rising Star
+                </h3>
+
+                <p>
+                    Reach Level 5.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div
+            id="achievement-xp"
+            class="achievement locked">
+
+            <span>💎</span>
+
+            <div>
+                <h3>
+                    XP Master
+                </h3>
+
+                <p>
+                    Earn 1,000 XP.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- LEADERBOARD -->
+<!-- ================================================= -->
+
+<section id="leaderboard" class="page">
+
+    <h2 class="page-title">
+        🥇 LEADERBOARD
+    </h2>
+
+    <div class="leaderboard">
+
+        <div class="leader first">
+            <span>🥇</span>
+            <strong>ShadowKnight</strong>
+            <b>5420 XP</b>
+        </div>
+
+        <div class="leader second">
+            <span>🥈</span>
+            <strong>PixelMaster</strong>
+            <b>4850 XP</b>
+        </div>
+
+        <div class="leader third">
+            <span>🥉</span>
+            <strong>CyberWolf</strong>
+            <b>3900 XP</b>
+        </div>
+
+        <div class="leader player">
+
+            <span>🎮</span>
+
+            <strong>
+                PLAYER ONE
+            </strong>
+
+            <b id="leaderXP">
+                0 XP
+            </b>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SHOP -->
+<!-- ================================================= -->
+
+<section id="shop" class="page">
+
+    <h2 class="page-title">
+        🛒 COIN SHOP
+    </h2>
+
+    <p class="shop-balance">
+        🪙 Your Coins:
+        <strong id="shopCoins">
+            100
+        </strong>
+    </p>
+
+
+    <div class="shop-grid">
+
+        <div class="shop-item">
+
+            <div>
+                🧑‍🚀
+            </div>
+
+            <h3>
+                Space Avatar
+            </h3>
+
+            <p>
+                A cool astronaut avatar.
+            </p>
+
+            <button onclick="buyItem('Space Avatar',50)">
+                🪙 50
+            </button>
+
+        </div>
+
+
+        <div class="shop-item">
+
+            <div>
+                ⚡
+            </div>
+
+            <h3>
+                Energy Boost
+            </h3>
+
+            <p>
+                A special gaming boost.
+            </p>
+
+            <button onclick="buyItem('Energy Boost',75)">
+                🪙 75
+            </button>
+
+        </div>
+
+
+        <div class="shop-item">
+
+            <div>
+                👑
+            </div>
+
+            <h3>
+                Champion Badge
+            </h3>
+
+            <p>
+                Show everyone you're a champion.
+            </p>
+
+            <button onclick="buyItem('Champion Badge',150)">
+                🪙 150
+            </button>
+
+        </div>
+
+
+        <div class="shop-item">
+
+            <div>
+                💎
+            </div>
+
+            <h3>
+                Diamond Skin
+            </h3>
+
+            <p>
+                A premium gaming skin.
+            </p>
+
+            <button onclick="buyItem('Diamond Skin',250)">
+                🪙 250
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- HOW TO PLAY -->
+<!-- ================================================= -->
+
+<section id="howto" class="page">
+
+    <h2 class="page-title">
+        📖 HOW TO PLAY
+    </h2>
+
+
+    <div class="howto-card">
+
+        <h3>
+            🎮 1. Choose a Game
+        </h3>
+
+        <p>
+            Go to Home and choose one of the four games.
+        </p>
+
+
+        <h3>
+            ⭐ 2. Earn XP
+        </h3>
+
+        <p>
+            Winning games gives you XP.
+            Earn enough XP to level up.
+        </p>
+
+
+        <h3>
+            🪙 3. Earn Coins
+        </h3>
+
+        <p>
+            XP rewards also give you coins.
+            Use coins in the Shop.
+        </p>
+
+
+        <h3>
+            🏆 4. Unlock Achievements
+        </h3>
+
+        <p>
+            Complete challenges to unlock achievements.
+        </p>
+
+
+        <h3>
+            🥇 5. Climb the Leaderboard
+        </h3>
+
+        <p>
+            Earn XP and compete with other players.
+        </p>
+
+
+        <h3>
+            💾 6. Your Progress Saves
+        </h3>
+
+        <p>
+            Your XP, coins, wins and achievements
+            are automatically saved in your browser.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- GAME SCREEN -->
+<!-- ================================================= -->
+
+<div
+    id="gameScreen"
+    class="game-screen">
+
+    <button
+        class="back"
+        onclick="closeGame()">
+
+        ← BACK
+
+    </button>
+
+
+    <div class="game-content">
+
+        <div id="gameIcon">
+            🎮
+        </div>
+
+        <h2 id="gameTitle">
+            Game
+        </h2>
+
+        <p id="gameDescription">
+            Loading...
+        </p>
+
+        <button
+            class="start-button"
+            onclick="playGame()">
+
+            START GAME
+
+        </button>
+
+        <div id="result"></div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 ChatGPT Gaming Station
+    </p>
+
+</footer>
+
+
+<script src="ChatGPT.js"></script>
+
+</body>
+</html>
